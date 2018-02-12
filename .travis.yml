@@ -1,0 +1,35 @@
+language: cpp
+sudo: false
+
+compiler:
+  - gcc
+
+env:
+  global:
+    - CCACHE_COMPRESS=1
+
+cache:
+  apt: true
+  ccache: true
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.9
+    - g++-4.9
+    - libcurl4-openssl-dev
+    - libssl-dev
+    - libjansson-dev
+    - libgmp-dev
+
+before_install:
+  - export CC=gcc-4.9 CXX=g++-4.9
+
+before_script:
+  - autoreconf -f -i -v
+
+script:
+  - CFLAGS="-O3 -maes -mavx -mssse3 -msse4.1 -mtune=intel -DUSE_ASM" CXXFLAGS="$CFLAGS -std=gnu++11" ./configure --with-crypto --with-curl || cat config.log
+  - make

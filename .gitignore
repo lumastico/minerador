@@ -1,10 +1,57 @@
-# For projects using Nanoc (http://nanoc.ws/)
+minerd*
+cpuminer
+*.exe
+*.o
+*.d
+*.new
+*.bak
+*.good
+*.orig
+*.del
+gmon.out
 
-# Default location for output (needs to match output_dir's value found in nanoc.yaml)
-output/
+autom4te.cache
+.deps
 
-# Temporary file directory
-tmp/
+Makefile
+Makefile.in
+INSTALL
+configure.lineno
+depcomp
+missing
+install-sh
+stamp-h1
+cpuminer-config.h*
+compile
+config.log
+config.status
+config.status.lineno
+config.guess
+config.sub
 
-# Crash Log
-crash.log
+mingw32-config.cache
+
+*/.dirstamp
+*/*/.dirstamp
+*/*/*/.dirstamp
+*.iml
+
+*.vcxproj.user
+*.opensdf
+*.sdf
+*.suo
+Release/
+Debug/
+x64/Release/
+x64/Debug/
+*.pdb/
+
+installer/
+res/cpuminer.aps
+res/RC*
+sign/
+sign.sh
+
+compat/curl-for-windows/
+.dirstamp
+cpuminer.VC.db
